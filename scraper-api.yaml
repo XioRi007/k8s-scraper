@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scraper-api
+  labels:
+    app: scraper-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scraper-api
+  template:
+    metadata:
+      labels:
+        app: scraper-api
+    spec:
+      containers:
+      - name: scraper-api
+        image: xiori007/scraper-api
+        ports:
+        - containerPort: 3000
