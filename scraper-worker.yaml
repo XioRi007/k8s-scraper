@@ -22,7 +22,7 @@ spec:
             matchLabels:
               type: scrapy-prod-context    
       containers:
-      - name: scraper-api
-        image: xiori007/scraper-worker
-        ports:
-        - containerPort: 5000
+        - name: scraper-api
+          image: xiori007/scraper-worker
+          ports:
+            - containerPort: 5000
