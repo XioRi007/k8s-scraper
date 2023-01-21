@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: scraper-worker
+  name: "scraper-worker"
   labels:
-    app: scraper-worker
+    app: "scraper-worker"
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: scraper-worker
+      app: "scraper-worker"
   template:
     metadata:
       labels:
-        app: scraper-worker
+        app: "scraper-worker"
     spec:  
       containers:
-      - name: scraper-api
+      - name: "scraper-api"
         image: xiori007/scraper-worker
         ports:
           - containerPort: 5000
