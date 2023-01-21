@@ -13,16 +13,9 @@ spec:
     metadata:
       labels:
         app: scraper-worker
-    spec:
-      topologySpreadConstraints:
-        - maxSkew: 1
-          topologyKey: node
-          whenUnsatisfiable: DoNotSchedule
-          labelSelector:
-            matchLabels:
-              type: scrapy-prod-context    
+    spec:  
       containers:
-        - name: scraper-api
-          image: xiori007/scraper-worker
-          ports:
-            - containerPort: 5000
+      - name: scraper-api
+        image: xiori007/scraper-worker
+        ports:
+          - containerPort: 5000
